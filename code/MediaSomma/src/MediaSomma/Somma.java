@@ -14,7 +14,6 @@ public class Somma {
 		n2=scanner.nextInt();
 		var somma= n1+n2;
 		System.out.println("somma: "+somma);
-		
 		var media=(somma/2);
 		System.out.println("media: "+media);
 
