@@ -9,10 +9,9 @@ public class GiornoSettimana {
 		
 		
 		Scanner scanner = new Scanner(System.in);
+		System.out.println("inserisci il giorno della settimana: ");
 		int giorno;
-		
-		
-	giorno=scanner.nextInt();
+	    giorno=scanner.nextInt();
 		
 		switch(giorno) {
 		case 1:
