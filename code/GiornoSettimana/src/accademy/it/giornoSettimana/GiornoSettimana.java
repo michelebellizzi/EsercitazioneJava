@@ -35,7 +35,9 @@ public class GiornoSettimana {
 		case 7:
 			System.out.println("domenica");
 			break;
-		
+		default:
+			System.out.println("la settimana è composta da 7 giorni");
+			break;
 			
 			
 		}
