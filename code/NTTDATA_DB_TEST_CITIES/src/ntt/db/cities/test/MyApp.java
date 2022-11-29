@@ -11,11 +11,13 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import ntt.db.cities.test.model.City;
+import ntt.db.cities.test.utility.Repository;
 import ntt.db.cities.test.utility.Request;
 
 public class MyApp {
 	protected Shell shell;
 	private static List<City> mCities;
+	private static Repository repository;
 	
 
 	private JFrame frame;
@@ -28,7 +30,9 @@ public class MyApp {
 		String url="http://www.bitesrl.it/test/course/requests/script.php?type=cities";
 		String response= Request.doRequest(url);
 		JSONArray array=new JSONArray(response);
-		System.out.println(array);
+		repository=Repository.getIstance();
+		repository.deleteAll();
+	
 		for(int i = 0; i<array.length();i++) {
 			
 			JSONObject city_json=array.optJSONObject(i);
@@ -37,7 +41,13 @@ public class MyApp {
 		
 			System.out.println(city);
 			mCities.add(city);
+			repository.insertCity(city);
 		}
+		System.out.println("citta internet");
+		System.out.println(mCities);
+		
+		mCities= repository.getAllCites();
+		System.out.println("citta db");
 		System.out.println(mCities);
 		
 		EventQueue.invokeLater(new Runnable() {
