@@ -34,6 +34,12 @@ public class BubbleSortArray {
 			num = input.nextInt();
 			arr[i] = num;
 			
+			
+		}
+		bubbleSort(arr);
+		System.out.println("Bubble Sort:");
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i]+ " ");
 		}
 		}
 		catch(InputMismatchException e){
@@ -44,11 +50,7 @@ public class BubbleSortArray {
 		catch(Exception e) {
 			System.out.println("error: "+ e);
 		}
-		 bubbleSort(arr);
-		System.out.println("Bubble Sort:");
-		for (int i = 0; i < arr.length; i++) {
-			System.out.print(arr[i]+ " ");
-		}
+		 
 
 	}
 }
